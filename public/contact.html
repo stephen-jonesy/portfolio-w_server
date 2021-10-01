@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://kit.fontawesome.com/aac5e3d248.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <nav class="nav">
+                <div class="profile-container">
+                    <img class="profile-picture" src="./pictures/1568385960050.jpg" alt="">
+                    <div class="title-container">
+                        <p class="title">Stephen Jones</p>
+                        <p class="role-title">Web Developer</p>
+                    </div>
+    
+                </div>
+                <div class="nav-links">
+                    <a href="index.html"><div class="nav-link">PORTFOLIO</div></a>
+                    <a href="about.html">
+                        <div class="nav-link">
+                            ABOUT
+                        </div>
+                    </a>
+                    <a href="contact.html">
+                        <div class="nav-link active-link">
+                            CONTACT
+                        </div>
+                    </a>
+                    
+                </div>
+                <div></div>
+                <!-- <div class="container-email"><p>Email: stephen-jones@hotmail.co.uk</p></div> -->
+            </nav>
+
+        </div>
+        <div class="mobile-header-container">
+            <div class="mobile-header">
+                <div class="profile-container mobile-profile-container">
+                    <img class="profile-picture" src="./pictures/1568385960050.jpg" alt="">
+                    <div class="title-container">
+                        <p class="title">Stephen Jones</p>
+                        <p class="role-title">Web Developer</p>
+                    </div>
+                </div>
+                <i class="fas fa-bars nav-burger"></i>
+    
+    
+            </div>
+
+        </div>
+
+    </header>
+    <main class="main contact-main">
+        <div class="contact-grid">
+            <div class="grid-1">
+                <div class="sent-info"></div>
+                <form action="mailto:someone@example.com" id="contact-form" method="POST" action="send" enctype="multipart/form-data">
+                    <br><label class="contact-header">Contact me</label> <br>
+                    <!-- Name: -->
+                    <br>
+                    <input type="text" name="name" placeholder="Your name or organisation" class="form-control"><br>
+                    <!-- E-mail: -->
+                    <br>
+                    <input type="text" name="email" placeholder="Your Email" class="form-control" required><br>
+                    <!-- Subject: -->
+                    <br>
+                    <input type="text" name="subject" placeholder="Subject" class="form-control" required><br>
+                    <!-- Message: -->
+                    <br>
+                    <textarea name="message" class="form-control" id="message" cols="30" rows="6" placeholder="Message" required></textarea><br><br>
+                    <input type="submit" value="Send" class="submit-btn">
+                </form>
+            </div>
+
+    
+            <div class="grid-2">
+                <div class="circles-container">
+                    <div class="circle-row-container"><div class="circle"><i class="fas fa-map-marker-alt"></i></div><div class="contact-details">Location: <span>London</span> </div></div>
+                    <div class="circle-row-container"><div class="circle"><i class="fas fa-phone"></i></div><div class="contact-details">Phone: <span>07788882693</span> </div></div>
+                    <div class="circle-row-container"><div class="circle"><i class="fas fa-envelope-open"></i></div><div class="contact-details">Email: <div>stephen-jones@hotmail.co.uk</div> </div></div>
+
+                </div>
+
+            </div>
+    
+        </div>
+
+    </main>
+    <script src="app.js"></script>
+    <script>
+        //get the form by its id
+        const form = document.getElementById("contact-form"); 
+
+        const formEvent = form.addEventListener("submit", (event) => {
+        event.preventDefault();
+            console.log(form.name.value)
+            //2.
+            let mail = new FormData(form);
+            console.log(mail)
+
+            //3.
+            sendMail(mail);
+
+            form.name.value = "";
+            form.email.value = "";
+            form.subject.value = "";
+            form.message.value = "";
+
+        })
+
+        const sendMail = (mail) => {
+            //1.
+            fetch("http://localhost:5000/send", {
+                method: "post", //2.
+                body: mail, //3.
+
+            }).then(response => response.json())
+            .then(function(response) {
+                if (response.ok) {
+                    sentInfoUI(response.data)
+                }
+                else if (!response.ok) {
+                    sentInfoUI(response.data)
+                    throw new Error('Request failed.');
+
+
+                }
+            })
+
+        };
+
+        const sentInfoUI = (data) => {
+            console.log(data);
+            const UiContainer = document.querySelector('.sent-info');
+            UiContainer.innerHTML = data;
+
+        }
+
+    </script>
+    
+</body>
+</html>
+
+    
