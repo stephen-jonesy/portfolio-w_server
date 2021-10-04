@@ -532,6 +532,30 @@ body {
     display: none;
 }
 
+.sent-info {
+    position: fixed;
+    top: 0;
+    left: 50%; 
+    transform:translate(-50%,-150%);
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    z-index: 10;
+    transition: 1s linear;
+    transition: 0.2s linear;
+    opacity: 0;
+    border-radius: 10px;
+
+}
+
+.sent-info-active {
+    position: fixed;
+    transform:translate(-50%, 0%);
+    opacity: 1;
+
+
+}
+
 .contact-main {
     padding-top: 0;
     margin-left: 350px;

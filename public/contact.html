@@ -55,13 +55,15 @@
             </div>
 
         </div>
+        <div class="sent-info"></div>
+
 
     </header>
     <main class="main contact-main">
+
         <div class="contact-grid">
             <div class="grid-1">
-                <div class="sent-info"></div>
-                <form action="mailto:someone@example.com" id="contact-form" method="POST" action="send" enctype="multipart/form-data">
+                <form id="contact-form" method="POST" action="send" enctype="multipart/form-data">
                     <br><label class="contact-header">Contact me</label> <br>
                     <!-- Name: -->
                     <br>
@@ -117,7 +119,7 @@
 
         const sendMail = (mail) => {
             //1.
-            fetch("http://localhost:5000/send", {
+            fetch("/send", {
                 method: "post", //2.
                 body: mail, //3.
 
@@ -140,6 +142,9 @@
             console.log(data);
             const UiContainer = document.querySelector('.sent-info');
             UiContainer.innerHTML = data;
+            UiContainer.innerHTML === 'Success! Your message was sent' ? UiContainer.style = "background-color: rgb(39, 72, 116);" :  UiContainer.style = 'background-color: rgb(177, 25, 25);';
+            UiContainer.classList.toggle('sent-info-active');
+            setTimeout(function(){UiContainer.classList.toggle('sent-info-active');}, 3000);
 
         }
 

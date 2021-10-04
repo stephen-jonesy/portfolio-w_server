@@ -65,7 +65,7 @@ app.post("/send", (req, res) => {
           res.status(500).send(
             {
               ok: false,
-              data: 'Opps! Something went wrong'
+              data: `Opps! Message couldn't send`
             });
         } else {
           res.status(200)
