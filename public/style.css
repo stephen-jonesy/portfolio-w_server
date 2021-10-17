@@ -317,6 +317,13 @@ body {
     
 }
 
+.tile-6 {
+    background-image: url("./pictures/nikkihopkins.png");
+    background-size: cover;
+    background-position: center;
+
+}
+
 .tiles-text-container-active {
     opacity: 1;
 
