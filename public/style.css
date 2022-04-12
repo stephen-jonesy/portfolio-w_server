@@ -282,8 +282,8 @@ body {
 }
 
 
-.tile-1 {
-    background-image: url("./pictures/cycle-logo.png");
+.tile-7 {
+    background-image: url("./pictures/tuesday-logo.png");
     background-size: cover;
     background-position: center;
 
@@ -728,6 +728,8 @@ textarea:focus::-webkit-input-placeholder {
     font-size: 16px;
     line-height: 22px;
 }
+
+
 
 @media only screen and (max-width: 1285px) {
 
