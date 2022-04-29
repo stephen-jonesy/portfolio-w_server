@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //The 404 Route (ALWAYS Keep this as the last route)
 app.get('*', function(req, res){
-  res.redirect('/page404.html')
+  res.send('what???', 404);
 });
 
 //port will be 5000 for testing
