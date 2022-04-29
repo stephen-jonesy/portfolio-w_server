@@ -3,8 +3,6 @@ tilesImage = document.querySelectorAll('.tiles-img');
 const tilesText = document.querySelectorAll('.tiles-text-container');
 const burgerNav = document.querySelector('.nav-burger');
 
-console.log(window.innerWidth)
-
 const toggleNav = () => {
     const header = document.querySelector('.header');
     header.classList.toggle('side-nav');
@@ -30,8 +28,8 @@ portfolioTiles.forEach((element, index) => {
 });
 */
 
+
 document.addEventListener('click', (e) => {
-    console.log(e.target)
     if(e.target.matches('.fas')) {
         toggleNav()
         

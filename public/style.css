@@ -765,11 +765,11 @@ textarea:focus::-webkit-input-placeholder {
     
     }
 
-    .grid-2 {
+    /* .grid-2 {
 
         margin-left: 15%;
     
-    }
+    } */
 }
 
 @media only screen and (max-width: 800px) {
@@ -872,6 +872,8 @@ textarea:focus::-webkit-input-placeholder {
     .portfolio-container {
         margin-top: 80px;
     }
+
+
 
 }
 

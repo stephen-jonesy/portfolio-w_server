@@ -61,25 +61,20 @@
     </header>
     <main class="main contact-main">
 
-        <div class="contact-grid">
-            <div class="grid-1">
+            <!-- <div class="grid-1">
                 <form id="contact-form" method="POST" action="send" enctype="multipart/form-data">
                     <br><label class="contact-header">Contact me</label> <br>
-                    <!-- Name: -->
                     <br>
                     <input type="text" name="name" placeholder="Your name or organisation" class="form-control"><br>
-                    <!-- E-mail: -->
                     <br>
                     <input type="text" name="email" placeholder="Your Email" class="form-control" required><br>
-                    <!-- Subject: -->
                     <br>
                     <input type="text" name="subject" placeholder="Subject" class="form-control" required><br>
-                    <!-- Message: -->
                     <br>
                     <textarea name="message" class="form-control" id="message" cols="30" rows="6" placeholder="Message" required></textarea><br><br>
                     <input type="submit" value="Send" class="submit-btn">
                 </form>
-            </div>
+            </div> -->
 
     
             <div class="grid-2">
@@ -92,20 +87,18 @@
 
             </div>
     
-        </div>
 
     </main>
     <script src="app.js"></script>
+<!--     
     <script>
         //get the form by its id
         const form = document.getElementById("contact-form"); 
 
         const formEvent = form.addEventListener("submit", (event) => {
         event.preventDefault();
-            console.log(form.name.value)
             //2.
             let mail = new FormData(form);
-            console.log(mail)
 
             //3.
             sendMail(mail);
@@ -139,7 +132,6 @@
         };
 
         const sentInfoUI = (data) => {
-            console.log(data);
             const UiContainer = document.querySelector('.sent-info');
             UiContainer.innerHTML = data;
             UiContainer.innerHTML === 'Success! Your message was sent' ? UiContainer.style = "background-color: rgb(39, 72, 116);" :  UiContainer.style = 'background-color: rgb(177, 25, 25);';
@@ -148,7 +140,7 @@
 
         }
 
-    </script>
+    </script> -->
     
 </body>
 </html>
