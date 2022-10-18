@@ -24,12 +24,12 @@ app.listen(PORT, () => {
 });
 
 const transporter = nodemailer.createTransport( {
-  service: "gmail",
+  service: "gmail", 
   auth: {
     user: process.env.EMAIL,
     pass: process.env.PASS,
   }
-});
+}); 
 
 transporter.verify(function (error, success) {
     if (error) {
